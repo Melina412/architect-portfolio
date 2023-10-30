@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+// * fonts ********************************************************************
+
+@font-face {
+  font-family: RobotoLight;
+  src: url("/font/Roboto/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: RobotoRegular;
+  src: url("/font/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: RobotoMedium;
+  src: url("/font/Roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: RobotoBold;
+  src: url("/font/Roboto/Roboto-Bold.ttf");
+}
+
+$Roboto300: RobotoLight, system-ui, Helvetica, Arial, sans-serif;
+$Roboto400: RobotoRegular, system-ui, Helvetica, Arial, sans-serif;
+$Roboto500: RobotoMedium, system-ui, Helvetica, Arial, sans-serif;
+$Roboto700: RobotoBold, system-ui, Helvetica, Arial, sans-serif;
+
+// * text & background colors *************************************************
+
+$black: #000;
+$white: #fff;
+
+$gray1: #333; // Main focus text, Lorum h1, Gallery h1, button text + bg + sample project hover bg
+$gray2: #2c2c2c; // footer bg
+$gray3: #666; // loading page text
+$gray4: #bdbdbd; // headlines
+$gray5: #8d8d8d; // form placeholder text
+$gray6: #f2f2f2; // main focus numbers
+$gray7: #f3f3f3; // form input bg
+
+$red: #c30000; // form required stern
+$dark: #343434; // darkmode bg
+
+:root {
+  --bg-light: $white;
+  --tc-light: $gray1;
+  --bg-dark: $dark;
+  --tc-dark: $white;
+}
+
+// * mixins *******************************************************************
+
+@mixin text-style($ff, $fz, $c, $lh) {
+  font-family: $ff;
+  font-size: $fz;
+  color: $c;
+  line-height: $lh;
+}

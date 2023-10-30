@@ -1,0 +1,201 @@
+// @import "Styles";
+// @import "DarkTheme";
+// @import "Header";
+
+// - ==============================================================================================
+// - styles =======================================================================================
+// - ==============================================================================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+// * fonts ********************************************************************
+
+@font-face {
+  font-family: RobotoLight;
+  src: url("/font/Roboto/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: RobotoRegular;
+  src: url("/font/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: RobotoMedium;
+  src: url("/font/Roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: RobotoBold;
+  src: url("/font/Roboto/Roboto-Bold.ttf");
+}
+
+$Roboto300: RobotoLight, system-ui, Helvetica, Arial, sans-serif;
+$Roboto400: RobotoRegular, system-ui, Helvetica, Arial, sans-serif;
+$Roboto500: RobotoMedium, system-ui, Helvetica, Arial, sans-serif;
+$Roboto700: RobotoBold, system-ui, Helvetica, Arial, sans-serif;
+
+// * text & background colors *************************************************
+
+$black: #000;
+$white: #fff;
+
+$gray1: #333; // Main focus text, Lorum h1, Gallery h1, button text + bg + sample project hover bg
+$gray2: #2c2c2c; // footer bg
+$gray3: #666; // loading page text
+$gray4: #bdbdbd; // headlines
+$gray5: #8d8d8d; // form placeholder text
+$gray6: #f2f2f2; // main focus numbers
+$gray7: #f3f3f3; // form input bg
+
+$red: #c30000; // form required stern
+$dark: #343434; // darkmode bg
+
+:root {
+  --bg-light: $white;
+  --tc-light: $gray1;
+  --bg-dark: $dark;
+  --tc-dark: $white;
+}
+
+// * mixins *******************************************************************
+
+@mixin text-style($ff, $fz, $c, $lh) {
+  font-family: $ff;
+  font-size: $fz;
+  color: $c;
+  line-height: $lh;
+}
+
+// - ==============================================================================================
+// - header =======================================================================================
+// - ==============================================================================================
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 102px;
+  margin: 0 13.5rem;
+
+  img#darkLogo {
+    display: block;
+    &.darkmode {
+      display: none;
+    }
+  }
+  img#whiteLogo {
+    display: none;
+    &.darkmode {
+      display: block;
+    }
+  }
+
+  div.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    nav {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      justify-items: center;
+      width: 63rem;
+
+      a {
+        @include text-style($Roboto400, 1.2rem, var(--tc-light), 100%);
+        text-decoration: none;
+        display: block;
+        padding: 0.4rem 1.4rem;
+
+        &.active {
+          // border-top: 1px solid var(--tc-light);
+          // border-bottom: 1px solid var(--tc-light);
+          border-top: 1px solid $gray1;
+          border-bottom: 1px solid $gray1;
+        }
+      }
+    }
+
+    div.theme-icons {
+      margin-left: 11rem;
+      img#moonIcon {
+        display: block;
+        &.darkmode {
+          display: none;
+        }
+      }
+      img#sunIcon {
+        display: none;
+        &.darkmode {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// - ==============================================================================================
+// - darkmode =======================================================================================
+// - ==============================================================================================
+
+.lightmode section {
+  background-color: var(--bg-light);
+  color: var(--tc-light);
+  border-color: var(--tc-light);
+}
+
+.darkmode {
+  background-color: $dark;
+  color: $white;
+}
+
+.darkmode section {
+  background-color: var(--bg-dark);
+  color: var(--tc-dark);
+}
+
+.darkmode header a {
+  color: var(--tc-dark);
+}
+
+// ? um den Style in darkmode zu ändern muss man die Selektorpezifität des DOM-Elements erhöhen
+// ? und das klappt hier nur wenn man den ganzen js selector aufschreibt.
+.darkmode header div.navigation nav a.active {
+  border-top-color: $white;
+  border-bottom-color: var(--tc-dark);
+}
+
+// - ==============================================================================================
+// - loading page =================================================================================
+// - ==============================================================================================
+
+section.loading-animation {
+  div {
+    width: 50vw;
+    margin: 0 auto;
+
+    img {
+      width: 300px;
+      height: 300px;
+      animation: rotate 1s linear infinite;
+    }
+    h1 {
+      font-family: $Roboto300;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

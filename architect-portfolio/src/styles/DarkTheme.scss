@@ -1,0 +1,24 @@
+// .darkmode {
+//   background-color: $dark;
+//   color: $white;
+
+//   a {
+//     color: $white;
+//   }
+
+// header {
+//   img#darkLogo,
+//   img#moonIcon {
+//     display: none;
+//   }
+
+//   img#whiteLogo,
+//   img#sunIcon {
+//     display: block;
+//   }
+// }
+// das festlegen der darkmode styles funktioniert hier nicht, weil die Selektorspezifität
+//'header ...' immer höher ist als '.darkmode header ...'
+// es sei denn man macht den kompletten style der komponenten und pages in der App.scss
+// ODER noch besser: man macht eine Darkmode.scss und legt dort die styles gesammelt fest
+// }
