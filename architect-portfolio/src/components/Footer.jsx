@@ -1,5 +1,11 @@
 const Footer = () => {
-  return <footer></footer>;
+  return (
+    <footer>
+      <div>
+        <img src="/img/facebook.png" alt="" />
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

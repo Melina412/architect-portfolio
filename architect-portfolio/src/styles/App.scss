@@ -10,6 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: normal;
 }
 
 html {
@@ -70,6 +71,25 @@ $dark: #343434; // darkmode bg
   font-size: $fz;
   color: $c;
   line-height: $lh;
+}
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+// * general element style *******************************************************************
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  @include text-style($Roboto300, 6.4rem, $gray4, 100%);
+}
+
+h3 {
+  @include text-style($Roboto700, 6.4rem, var(--tc-light), 100%);
 }
 
 // - ==============================================================================================
@@ -141,7 +161,35 @@ header {
 }
 
 // - ==============================================================================================
-// - darkmode =======================================================================================
+// - home project =================================================================================
+// - ==============================================================================================
+
+section.home-project {
+  display: flex;
+  width: 80vw;
+  margin: 0 auto 15rem auto;
+
+  div.home-text {
+    @include size(35%, 80.3rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  div.home-bg-img {
+    @include size(65%, 80.3rem);
+    background-image: url("/img/project-lorum.png");
+    position: relative;
+
+    button {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+// - ==============================================================================================
+// - darkmode =====================================================================================
 // - ==============================================================================================
 
 .lightmode section {
