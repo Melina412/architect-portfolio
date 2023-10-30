@@ -10,7 +10,6 @@ import OurProjects from "../components/OurProjects";
 const Home = () => {
   return (
     <>
-      {/* <LoadingPage /> */}
       <Header />
       <HomeProject />
       <About />

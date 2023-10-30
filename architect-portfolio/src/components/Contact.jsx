@@ -24,7 +24,7 @@ const Contact = () => {
                 type="text"
                 value={inputValue}
                 onChange={handleInput}
-                onBlur={handleInput}
+                onFocus={handleInput}
               />
             </div>
 
@@ -32,50 +32,26 @@ const Contact = () => {
               <label htmlFor="phone">
                 Phone Number <span>*</span>
               </label>
-              <input
-                id="phone"
-                type="number"
-                value={inputValue}
-                onChange={handleInput}
-                onBlur={handleInput}
-              />
+              <input id="phone" type="number" />
             </div>
 
             <div className="input-wrapper">
               <label htmlFor="mail">
                 E-mail <span>*</span>
               </label>
-              <input
-                id="mail"
-                type="email"
-                value={inputValue}
-                onChange={handleInput}
-                onBlur={handleInput}
-              />
+              <input id="mail" type="email" />
             </div>
 
             <div className="input-wrapper">
               <label htmlFor="topic">Interested in</label>
-              <input
-                id="topic"
-                type="text"
-                value={inputValue}
-                onChange={handleInput}
-                onBlur={handleInput}
-              />
+              <input id="topic" type="text" />
             </div>
 
             <div className="input-wrapper">
               <label htmlFor="message" id="messageLabel">
                 Message <span>*</span>
               </label>
-              <input
-                id="message"
-                type="text"
-                value={inputValue}
-                onChange={handleInput}
-                onBlur={handleInput}
-              />
+              <input id="message" type="text" />
             </div>
 
             <Button text="SEND EMAIL" />

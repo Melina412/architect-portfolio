@@ -1,3 +1,10 @@
+// todo : contact section: bessere Lösung für ausblenden von labels on focus un bei vorhandenem value finden
+// todo : button style
+// todo : projects section hover effect
+// todo : footer style
+// todo : scss files organisieren
+// todo : responsive design & mobile vers.
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/App.scss";
 
