@@ -36,10 +36,16 @@ html {
   src: url("/font/Roboto/Roboto-Bold.ttf");
 }
 
+@font-face {
+  font-family: RobotoBlack;
+  src: url("/font/Roboto/Roboto-Black.ttf");
+}
+
 $Roboto300: RobotoLight, system-ui, Helvetica, Arial, sans-serif;
 $Roboto400: RobotoRegular, system-ui, Helvetica, Arial, sans-serif;
 $Roboto500: RobotoMedium, system-ui, Helvetica, Arial, sans-serif;
 $Roboto700: RobotoBold, system-ui, Helvetica, Arial, sans-serif;
+$Roboto900: RobotoBlack, system-ui, Helvetica, Arial, sans-serif;
 
 // * text & background colors *************************************************
 
@@ -226,8 +232,40 @@ section.about {
     gap: 2rem;
 
     p {
-      @include text-style($Roboto300, 1.6rem, var(--tc-light), 2.5rem);
+      @include text-style($Roboto300, 1.6rem, var(--tc-light), 156%);
       padding-bottom: 2rem;
+    }
+  }
+}
+
+// - ==============================================================================================
+// - main focus ===================================================================================
+// - ==============================================================================================
+
+section.main-focus {
+  width: 80vw;
+  margin: 0 auto 12rem auto;
+
+  article {
+    display: flex;
+    gap: 15rem;
+    margin-top: 6rem;
+
+    div {
+      display: flex;
+      gap: 3rem;
+
+      p.number {
+        @include text-style($Roboto900, 20rem, $gray6, 75%);
+      }
+
+      p.one {
+        letter-spacing: -3rem;
+      }
+
+      p {
+        @include text-style($Roboto400, 2.2rem, var(--tc-light), 163%);
+      }
     }
   }
 }
