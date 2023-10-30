@@ -271,6 +271,115 @@ section.main-focus {
 }
 
 // - ==============================================================================================
+// - our projects =================================================================================
+// - ==============================================================================================
+
+section.our-projects {
+  width: 80vw;
+  margin: 0 auto 12rem auto;
+
+  article {
+    margin-top: 6rem;
+  }
+}
+
+// - ==============================================================================================
+// - contact us =================================================================================
+// - ==============================================================================================
+
+section.contact-us {
+  width: 80vw;
+  margin: 0 auto 12rem auto;
+
+  article {
+    margin-top: 6rem;
+    display: grid;
+    grid-template-columns: 33% 65%;
+    gap: 3rem;
+
+    div.contact-form {
+      form {
+        display: grid;
+        gap: 1rem;
+        justify-items: start;
+
+        div.input-wrapper {
+          position: relative;
+          width: 100%;
+
+          label {
+            @include text-style($Roboto400, 1.4rem, $gray5, normal);
+            letter-spacing: 0.56px;
+            padding: 1.5rem 2rem;
+
+            position: absolute;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            &#messageLabel {
+              top: 0%;
+              transform: translateY(0%);
+            }
+
+            span {
+              color: $red;
+            }
+          }
+
+          input {
+            background-color: $gray7;
+            display: block;
+            width: 100%;
+            border: none;
+            padding: 1.5rem 2rem;
+
+            &#message {
+              height: 20rem;
+              resize: vertical;
+              vertical-align: top;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// - ==============================================================================================
+// - footer =======================================================================================
+// - ==============================================================================================
+
+footer {
+  background-color: $gray2;
+  height: 42rem;
+
+  h4 {
+    @include text-style($Roboto700, 1.6rem, $white, normal);
+  }
+  a {
+    @include text-style($Roboto500, 1.4rem, $white, 170%);
+    text-decoration: none;
+  }
+  p {
+    @include text-style($Roboto500, 1.4rem, $white, 170%);
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    div {
+      display: grid;
+
+      div.footer-contacts {
+        display: flex;
+      }
+    }
+  }
+}
+
+// - ==============================================================================================
 // - darkmode =====================================================================================
 // - ==============================================================================================
 
