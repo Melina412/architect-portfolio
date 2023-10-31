@@ -353,7 +353,7 @@ section.contact-us {
 
 footer {
   background-color: $gray2;
-  height: 42rem;
+  @include size(100vw, 44rem);
 
   h4 {
     @include text-style($Roboto700, 1.6rem, $white, normal);
@@ -368,14 +368,47 @@ footer {
 
   article {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr) 1.5fr;
+    padding: 6rem 10vw;
 
-    div {
-      display: grid;
+    div.footer-sections {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+
+      &:nth-child(4) {
+        padding-left: 15rem;
+      }
+
+      div.footer-nav {
+        display: grid;
+        gap: 1.6rem;
+      }
 
       div.footer-contacts {
         display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        padding-bottom: 2rem;
       }
+      div.sm-icon-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        width: 80%;
+      }
+    }
+  }
+
+  div.copyright {
+    @include size(100vw, 7rem);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    p {
+      @include text-style($Roboto400, 1.2rem, rgba(200, 200, 200, 0.5), 180%);
+      margin: 2.5rem auto;
+      text-align: center;
     }
   }
 }

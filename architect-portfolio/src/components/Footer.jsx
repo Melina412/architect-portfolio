@@ -8,9 +8,9 @@ const Footer = () => {
           <img src="/img/footer/footer-logo.png" alt="logo" />
         </div>
 
-        <div>
+        <div className="footer-sections">
           <h4>Information</h4>
-          <div>
+          <div className="footer-nav">
             <NavLink to="/">Main</NavLink>
             <NavLink to="/gallery">Gallery</NavLink>
             <NavLink to="/projects">Projects</NavLink>
@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div>
+        <div className="footer-sections">
           <h4>Contacts</h4>
 
           <div className="footer-contacts">
@@ -47,9 +47,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div>
+        <div className="footer-sections">
           <h4>Social Media</h4>
-          <div className="sm-wrapper">
+          <div className="sm-icon-wrapper">
             <img src="/img/footer/facebook.png" alt="icon" />
             <img src="/img/footer/twitter.png" alt="icon" />
             <img src="/img/footer/linked-in.png" alt="icon" />
@@ -57,7 +57,9 @@ const Footer = () => {
           </div>
         </div>
       </article>
-      <p className="copyright">© 2021 All Rights Reserved</p>
+      <div className="copyright">
+        <p>© 2021 All Rights Reserved</p>
+      </div>
     </footer>
   );
 };
